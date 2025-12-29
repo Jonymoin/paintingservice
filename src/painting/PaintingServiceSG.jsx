@@ -307,23 +307,7 @@ export default function PaintingServiceSG() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="mb-6">
-            <Paintbrush className="w-12 h-12 mx-auto mb-4 text-orange-500" />
-            <h4 className="text-2xl font-bold mb-2">PaintingServiceSG</h4>
-            <p className="text-gray-400">Your Trusted Painting Partner in Singapore</p>
-          </div>
-          <div className="flex justify-center items-center gap-4 mb-6">
-            <Clock className="w-5 h-5 text-orange-500" />
-            <span>Available 24/7</span>
-          </div>
-          <div className="border-t border-gray-700 pt-6">
-            <p className="text-gray-400">© 2025 PaintingServiceSG. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }
