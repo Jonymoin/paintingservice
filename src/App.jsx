@@ -1,3 +1,4 @@
+import Footer from "./painting/Footer"
 import Landing from "./painting/Landing"
 import PaintingServiceSG from "./painting/PaintingServiceSG"
 
@@ -10,6 +11,7 @@ function App() {
       <div>
         <PaintingServiceSG />
         <Landing />
+        <Footer />
       
       </div>
     </>

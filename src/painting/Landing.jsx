@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import {
   ShieldCheck,
   PaintBucket,
@@ -17,8 +16,6 @@ import {
   PaintRoller,
   Eye,
   Headphones,
-  Paintbrush,
-  Clock,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -26,15 +23,40 @@ const fadeInUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const SectionWrapper = ({ title, children }) => (
+const colorSchemes = {
+  policies: [
+    "from-blue-500 to-cyan-400",
+    "from-purple-500 to-pink-400",
+    "from-orange-500 to-yellow-400",
+    "from-green-500 to-emerald-400",
+    "from-red-500 to-rose-400",
+    "from-indigo-500 to-blue-400",
+  ],
+  values: [
+    "from-teal-500 to-green-400",
+    "from-violet-500 to-purple-400",
+    "from-amber-500 to-orange-400",
+    "from-sky-500 to-blue-400",
+  ],
+  steps: [
+    "bg-gradient-to-br from-blue-500 to-cyan-400",
+    "bg-gradient-to-br from-purple-500 to-pink-400",
+    "bg-gradient-to-br from-orange-500 to-yellow-400",
+    "bg-gradient-to-br from-green-500 to-emerald-400",
+    "bg-gradient-to-br from-red-500 to-rose-400",
+    "bg-gradient-to-br from-indigo-500 to-violet-400",
+  ]
+};
+
+const SectionWrapper = ({ title, children, gradient }) => (
   <motion.section
     variants={fadeInUp}
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className="py-12 px-4 max-w-6xl mx-auto"
+    className="py-16 px-4 max-w-6xl mx-auto"
   >
-    <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+    <h2 className={`text-4xl font-bold text-center mb-12 bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
       {title}
     </h2>
     {children}
@@ -52,9 +74,9 @@ const policies = [
 
 const values = [
   { icon: <Smile />, title: "Friendly Service", desc: "We treat every customer like family. No pushy sales—just helpful advice and a smile." },
-  { icon: <Users2 />, title: "Experienced Team", desc: "Our crew knows what they’re doing—years of hands-on painting experience and a passion for perfection." },
+  { icon: <Users2 />, title: "Experienced Team", desc: "Our crew knows what they're doing—years of hands-on painting experience and a passion for perfection." },
   { icon: <BadgeDollarSign />, title: "Affordable Rates", desc: "Transparent pricing, no hidden fees. Quality service at prices that make sense." },
-  { icon: <ThumbsUp />, title: "Customer Satisfaction", desc: "We don’t leave until you’re happy. 5-star reviews are not our goal—they’re our standard." },
+  { icon: <ThumbsUp />, title: "Customer Satisfaction", desc: "We don't leave until you're happy. 5-star reviews are not our goal—they're our standard." },
 ];
 
 const steps = [
@@ -63,30 +85,33 @@ const steps = [
   { icon: <Hammer />, title: "Detailed Prep Work", desc: "We fix cracks, protect furniture, and prep surfaces so the paint looks flawless." },
   { icon: <PaintRoller />, title: "Professional Painting", desc: "2 full coats of quality paint applied with precision by our skilled painters." },
   { icon: <Eye />, title: "Final Walkthrough", desc: "We inspect everything with you and handle any final touch-ups—no shortcuts." },
-  { icon: <Headphones />, title: "After-Service Support", desc: "Need help after we leave? We’re always just a call or message away." },
+  { icon: <Headphones />, title: "After-Service Support", desc: "Need help after we leave? We're always just a call or message away." },
 ];
 
-const GridSection = ({ data }) => (
+const GridSection = ({ data, colorScheme }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {data.map((item, idx) => (
       <motion.div
         key={idx}
-        className="bg-white p-6 rounded-2xl shadow hover:shadow-md transition"
+        className={`bg-gradient-to-br ${colorScheme[idx % colorScheme.length]} p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300`}
         variants={fadeInUp}
         whileInView="show"
         initial="hidden"
         viewport={{ once: true }}
       >
-        <div className="text-primary mb-4">{item.icon}</div>
-        <h3 className="text-xl font-semibold mb-2 text-gray-800">{item.title}</h3>
-        <p className="text-gray-600 text-sm">{item.desc}</p>
+        <div className="text-white mb-4 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+          {item.icon}
+        </div>
+        <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
+        <p className="text-white/90 text-sm">{item.desc}</p>
       </motion.div>
     ))}
   </div>
 );
 
 const VerticalTimeline = ({ steps }) => (
-  <div className="relative border-l-4 border-primary pl-6 space-y-12">
+  <div className="relative pl-6 space-y-12 max-w-3xl mx-auto">
+    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 via-orange-500 via-green-500 via-red-500 to-indigo-500"></div>
     {steps.map((step, idx) => (
       <motion.div
         key={idx}
@@ -96,11 +121,13 @@ const VerticalTimeline = ({ steps }) => (
         initial="hidden"
         viewport={{ once: true }}
       >
-        <div className="absolute -left-9 bg-white border-2 border-primary rounded-full w-10 h-10 flex items-center justify-center">
+        <div className={`absolute -left-9 ${colorSchemes.steps[idx]} rounded-full w-14 h-14 flex items-center justify-center shadow-lg text-white`}>
           {step.icon}
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-1 ml-2">{step.title}</h3>
-        <p className="text-gray-600 text-sm ml-2">{step.desc}</p>
+        <div className="ml-8 bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">{step.title}</h3>
+          <p className="text-gray-600 text-sm">{step.desc}</p>
+        </div>
       </motion.div>
     ))}
   </div>
@@ -108,37 +135,27 @@ const VerticalTimeline = ({ steps }) => (
 
 export default function EverFreshLanding() {
   return (
-    <>
-    <div className="bg-gray-50">
-      <SectionWrapper title="Our Commitments">
-        <GridSection data={policies} />
+    <div className="bg-gradient-to-b from-gray-50 via-blue-50/30 to-purple-50/30">
+      <SectionWrapper 
+        title="Our Commitments" 
+        gradient="from-blue-600 via-purple-600 to-pink-600"
+      >
+        <GridSection data={policies} colorScheme={colorSchemes.policies} />
       </SectionWrapper>
 
-      <SectionWrapper title="What Makes Us Different">
-        <GridSection data={values} />
+      <SectionWrapper 
+        title="What Makes Us Different" 
+        gradient="from-teal-600 via-green-600 to-emerald-600"
+      >
+        <GridSection data={values} colorScheme={colorSchemes.values} />
       </SectionWrapper>
 
-      <SectionWrapper title="Our Painting Process">
+      <SectionWrapper 
+        title="Our Painting Process" 
+        gradient="from-orange-600 via-red-600 to-pink-600"
+      >
         <VerticalTimeline steps={steps} />
       </SectionWrapper>
     </div>
-    {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="mb-6">
-            <Paintbrush className="w-12 h-12 mx-auto mb-4 text-orange-500" />
-            <h4 className="text-2xl font-bold mb-2">PaintingServiceSG</h4>
-            <p className="text-gray-400">Your Trusted Painting Partner in Singapore</p>
-          </div>
-          <div className="flex justify-center items-center gap-4 mb-6">
-            <Clock className="w-5 h-5 text-orange-500" />
-            <span>Available 24/7</span>
-          </div>
-          <div className="border-t border-gray-700 pt-6">
-            <p className="text-gray-400">© 2025 PaintingServiceSG. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-      </>
   );
 }
