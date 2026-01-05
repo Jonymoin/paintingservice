@@ -170,9 +170,15 @@ export default function PaintingServiceSG() {
           <div className="max-w-4xl mx-auto space-y-8">
             {/* HDB / Condo */}
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-xl">
+              <img 
+                src="/condo.jpg" 
+                alt="HDB Condo Painting" 
+                className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
+              />
               <div className="flex items-center gap-3 mb-4">
                 <Building className="w-8 h-8 text-blue-600" />
                 <h4 className="text-2xl font-bold text-gray-800">HDB / Condo Package</h4>
+              
               </div>
               <p className="text-sm text-gray-600 mb-6">Standard Nippon Vinilex 5000 - One color whole house</p>
               <div className="space-y-4">
@@ -188,6 +194,11 @@ export default function PaintingServiceSG() {
 
             {/* Interior */}
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 shadow-xl">
+              <img 
+                src="/interior.jpg" 
+                alt="HDB Condo Painting" 
+                className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
+              />
               <div className="flex items-center gap-3 mb-4">
                 <Home className="w-8 h-8 text-indigo-600" />
                 <h4 className="text-2xl font-bold text-gray-800">Interior Painting</h4>
@@ -205,6 +216,11 @@ export default function PaintingServiceSG() {
 
             {/* Exterior */}
             <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-8 shadow-xl">
+             <img 
+                src="/exterior.jpg" 
+                alt="HDB Condo Painting" 
+                className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
+              />
               <div className="flex items-center gap-3 mb-4">
                 <Paintbrush className="w-8 h-8 text-teal-600" />
                 <h4 className="text-2xl font-bold text-gray-800">Exterior Painting</h4>
