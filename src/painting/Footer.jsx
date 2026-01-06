@@ -29,10 +29,10 @@ const Footer = () => (
             Painting Service SG 
           </h3>
           <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            RAVENA PTE LTD
+            RAVEVA PTE LTD
           </h3>
           <p className="mb-4">
-            511 Guillemard road <br />#02-14 Grand Linl Square <br />Singapore 399849
+            511 Guillemard road <br />#02-14 Grand Link Square <br />Singapore 399849
           </p>
           
           <p className="text-gray-300 text-sm mb-6 leading-relaxed">
@@ -85,7 +85,7 @@ const Footer = () => (
               </div>
               <div>
                 <p className="text-xs text-gray-400 mb-1">Working Hours</p>
-                <p className="text-gray-200 text-sm font-medium">Mon - Sat: 9AM - 6PM</p>
+                <p className="text-gray-200 text-sm font-medium">Mon - Sun: 9AM - 6PM</p>
               </div>
             </div>
           </div>
