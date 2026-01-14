@@ -135,28 +135,69 @@ export default function PaintingServiceSG() {
         </div>
       </section>
 
-      {/* Image Gallery */}
-      <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <h3 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Our Work Gallery
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[2, 3, 4].map((num) => (
-              <div key={num} className="relative overflow-hidden rounded-2xl shadow-xl group">
-                <img 
-                  src={`/image${num}.jpg`}
-                  alt={`Painting project ${num}`}
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <p className="text-white font-semibold text-lg">Professional Results</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Before & After Gallery */}
+<section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+  <div className="container mx-auto px-4">
+    <h3 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+      Before & After Work
+    </h3>
+
+    <div className="grid md:grid-cols-2 gap-10">
+
+      {/* BEFORE WORK */}
+      <div>
+        <h4 className="text-2xl font-semibold mb-4 text-center text-gray-700">
+          Before Work
+        </h4>
+
+        <div className="grid grid-cols-2 gap-4">
+          {["/before1.jpeg", "/before2.jpeg"].map((img, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-xl shadow-lg group"
+            >
+              <img
+                src={img}
+                alt="Before painting work"
+                className="w-full h-48 object-cover transform group-hover:scale-110 transition duration-300"
+              />
+              <span className="absolute bottom-2 left-2 bg-black/60 text-white text-sm px-3 py-1 rounded">
+                Before
+              </span>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* AFTER WORK */}
+      <div>
+        <h4 className="text-2xl font-semibold mb-4 text-center text-gray-700">
+          After Work
+        </h4>
+
+        <div className="grid grid-cols-2 gap-4">
+          {["/after1.jpeg", "/after2.jpeg"].map((img, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-xl shadow-lg group"
+            >
+              <img
+                src={img}
+                alt="After painting work"
+                className="w-full h-48 object-cover transform group-hover:scale-110 transition duration-300"
+              />
+              <span className="absolute bottom-2 left-2 bg-green-600/80 text-white text-sm px-3 py-1 rounded">
+                After
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Pricing Section */}
       <section className="py-16 bg-white">
