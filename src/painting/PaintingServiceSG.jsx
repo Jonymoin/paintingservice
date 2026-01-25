@@ -43,6 +43,33 @@ export default function PaintingServiceSG() {
     'Free Consultation',
     'Quality Guaranteed'
   ];
+  const CallNowButton = () => {
+
+  // 🔹 1️⃣ Conversion fire করার function (return এর আগেই থাকবে)
+  const gtagReportConversion = (url) => {
+    const callback = () => {
+      if (url) {
+        window.location.href = url;
+      }
+    };
+
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17894850524/sI02COWnpuwbENz_9tRC',
+        event_callback: callback,
+      });
+    } else {
+      // fallback (rare case)
+      window.location.href = url;
+    }
+
+    return false;
+  };
+
+  // 🔹 2️⃣ Button click handler
+  const handleCallNowClick = () => {
+    gtagReportConversion('tel:+6581713404');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50">
@@ -55,6 +82,7 @@ export default function PaintingServiceSG() {
               <h1 className="text-2xl md:text-3xl font-bold">PaintingServiceSG</h1>
             </div>
             <a 
+            onClick={CallNowButton}
               href="https://wa.me/6581713404" 
               target="_blank" 
               rel="noopener noreferrer"
