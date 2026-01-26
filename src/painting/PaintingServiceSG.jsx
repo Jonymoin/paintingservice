@@ -82,7 +82,7 @@ export default function PaintingServiceSG() {
               <h1 className="text-2xl md:text-3xl font-bold">PaintingServiceSG</h1>
             </div>
             <a 
-            onClick={CallNowButton}
+          
               href="https://wa.me/6581713404" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -125,6 +125,7 @@ export default function PaintingServiceSG() {
                   Get Free Quote
                 </a>
                 <a 
+                onClick={() => gtagReportConversion('6581713404')}
                   href="tel:6581713404"
                   className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg border-2 border-blue-500 hover:bg-blue-50 transition-all"
                 >
