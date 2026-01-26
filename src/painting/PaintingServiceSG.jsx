@@ -43,33 +43,25 @@ export default function PaintingServiceSG() {
     'Free Consultation',
     'Quality Guaranteed'
   ];
-  const CallNowButton = () => {
+ const gtagReportConversion = (phone) => {
+  if (window.gtag) {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-17894850524/sI02COWnpuwbENz_9tRC',
+    });
 
-  // 🔹 1️⃣ Conversion fire করার function (return এর আগেই থাকবে)
-  const gtagReportConversion = (url) => {
-    const callback = () => {
-      if (url) {
-        window.location.href = url;
-      }
-    };
+    setTimeout(() => {
+      window.location.href = `tel:${phone}`;
+    }, 500);
+  } else {
+    window.location.href = `tel:${phone}`;
+  }
+};
+const handleCallNowClick = () => {
+  gtagReportConversion('+6581713404');
+};
 
-    if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-17894850524/sI02COWnpuwbENz_9tRC',
-        event_callback: callback,
-      });
-    } else {
-      // fallback (rare case)
-      window.location.href = url;
-    }
 
-    return false;
-  };
-
-  // 🔹 2️⃣ Button click handler
-  const handleCallNowClick = () => {
-    gtagReportConversion('tel:+6581713404');
-  };
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50">
@@ -124,13 +116,13 @@ export default function PaintingServiceSG() {
                 >
                   Get Free Quote
                 </a>
-                <a 
-                onClick={() => gtagReportConversion('6581713404')}
+                <button 
+                onClick={handleCallNowClick}
                   href="tel:6581713404"
                   className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg border-2 border-blue-500 hover:bg-blue-50 transition-all"
                 >
                   Call Now
-                </a>
+                </button>
               </div>
               <div className="flex items-center gap-6 pt-4">
                 <div className="flex items-center gap-2">
