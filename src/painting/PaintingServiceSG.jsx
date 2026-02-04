@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Clock, CheckCircle, Home, Building, Paintbrush, Star, MessageCircle } from 'lucide-react';
+import WorkGallery from './WorkGallery';
 
 export default function PaintingServiceSG() {
   const hdbPrices = [
@@ -138,7 +139,9 @@ const handleCallNowClick = () => {
           </div>
         </div>
       </section>
-
+      <section>
+        <WorkGallery />
+      </section>
       {/* Features Grid */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

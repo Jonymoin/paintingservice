@@ -1,6 +1,7 @@
 import Footer from "./painting/Footer"
 import Landing from "./painting/Landing"
 import PaintingServiceSG from "./painting/PaintingServiceSG"
+import FloatingWhatsApp from "./painting/WhatsAppFloat"
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <PaintingServiceSG />
         <Landing />
         <Footer />
-      
+        <FloatingWhatsApp />
       </div>
     </>
   )
