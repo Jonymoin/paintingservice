@@ -19,7 +19,7 @@ const HomePage = () => {
               Painting Services SG
             </h1>
             <p className="text-2xl md:text-3xl text-gray-200 mb-4">
-              Professional Painting & Waterproofing Solutions
+              Professional Painting & Waterproofing Solutions & Pu / Epoxy grounding injection
             </p>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
               Trusted Service Provider in Singapore
@@ -103,7 +103,7 @@ const HomePage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">HDB Indoor Painting</h3>
+                  <h3 className="text-2xl font-bold mb-2">HDB / Condo Painting</h3>
                   <p className="text-blue-100">Professional painting for HDB flats</p>
                 </div>
               </div>

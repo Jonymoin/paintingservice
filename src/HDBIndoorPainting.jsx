@@ -15,7 +15,7 @@ const HDBIndoorPainting = () => {
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center px-4">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              HDB Indoor Painting
+              HDB /Condo Painting
             </h1>
             <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
               Professional Painting Services in Singapore
