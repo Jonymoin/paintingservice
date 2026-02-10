@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 import HomePage from './HomePage';
 import HDBIndoorPainting from './HDBIndoorPainting';
 import WaterproofingService from './WaterproofingService';
 import RepairServices from './RepairServices';
 import BungalowPainting from './BungalowPainting';
-import ScrollToTop from './ScrollToTop';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -240,15 +240,6 @@ function App() {
               {/* Contact Info */}
               <div>
                 <h4 className="text-lg font-bold mb-4">Contact Us</h4>
-                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Painting Service SG 
-          </h3>
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            RAVEVA PTE LTD
-          </h3>
-          <p className="mb-4">
-            511 Guillemard road <br />#02-14 Grand Link Square <br />Singapore 399849
-          </p>
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
