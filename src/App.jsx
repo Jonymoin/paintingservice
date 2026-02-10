@@ -239,6 +239,15 @@ function App() {
 
               {/* Contact Info */}
               <div>
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Painting Service SG 
+          </h3>
+          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            RAVEVA PTE LTD
+          </h3>
+          <p className="mb-4">
+            511 Guillemard road <br />#02-14 Grand Link Square <br />Singapore 399849
+          </p>
                 <h4 className="text-lg font-bold mb-4">Contact Us</h4>
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-start">
